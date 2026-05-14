@@ -45,10 +45,13 @@
                 "temple_id": {
                   "example": "any"
                 },
-                "description": {
+                "dedicated": {
                   "example": "any"
                 },
                 "location": {
+                  "example": "any"
+                },
+                "additionalInfo": {
                   "example": "any"
                 }
               }

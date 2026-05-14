@@ -5,8 +5,7 @@ const apiKey =
   'Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N';
 
 exports.create = (req, res) => {
-  /* #swagger.description = 'API Key if needed: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
-  */
+ 
   // Validate request
   if (!req.body.name) {
     res.status(400).send({ message: 'Content can not be empty!' });
@@ -17,8 +16,10 @@ exports.create = (req, res) => {
   const temple = new Temple({
     temple_id: req.body.temple_id,
     name: req.body.name,
-    description: req.body.description,
-    location: req.body.location,
+    dedicated: req.body.dedicated,
+    location: req.body.location, 
+    additionalInfo: req.body.additionalInfo
+    
   });
   // Save Temple in the database
   temple
