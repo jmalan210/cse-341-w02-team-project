@@ -3,7 +3,17 @@ const cors = require('cors');
 const app = express();
 
 const swaggerUi = require('swagger-ui-express');
+
 const swaggerDocument = require('./swagger.json');
+
+console.log(swaggerDocument);
+console.log(__dirname);
+const fs = require('fs');
+app.get('/debug', (req, res) => {
+  res.json({ source: 'my-express-server' });
+});
+
+console.log(fs.readFileSync('./swagger.json', 'utf8'));
 
 app
   .use(cors())
