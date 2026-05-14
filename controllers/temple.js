@@ -135,31 +135,31 @@ exports.delete = (req, res) => {
 };
 
 // // Delete all Temples from the database.
-// exports.deleteAll = (req, res) => {
-//   Temple.deleteMany({})
-//     .then((data) => {
-//       res.send({
-//         message: `${data.deletedCount} Temples were deleted successfully!`,
-//       });
-//     })
-//     .catch((err) => {
-//       res.status(500).send({
-//         message:
-//           err.message || 'Some error occurred while removing all temple.',
-//       });
-//     });
-// };
+exports.deleteAll = (req, res) => {
+  Temple.deleteMany({})
+    .then((data) => {
+      res.send({
+        message: `${data.deletedCount} Temples were deleted successfully!`,
+      });
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message:
+          err.message || 'Some error occurred while removing all temple.',
+      });
+    });
+};
 
 // // Find all published Temples
-// exports.findAllPublished = (req, res) => {
-//   Temple.find({ published: true })
-//     .then((data) => {
-//       res.send(data);
-//     })
-//     .catch((err) => {
-//       res.status(500).send({
-//         message:
-//           err.message || 'Some error occurred while retrieving temple.',
-//       });
-//     });
-// };
+exports.findAllPublished = (req, res) => {
+  Temple.find({ published: true })
+    .then((data) => {
+      res.send(data);
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message:
+          err.message || 'Some error occurred while retrieving temple.',
+      });
+    });
+};

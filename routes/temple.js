@@ -4,10 +4,14 @@ const temples = require('../controllers/temple.js');
 routes.get('/', temples.findAll);
 routes.get('/:temple_id', temples.findOne);
 
+//Retrieve all published Temples
+// routes.get('/published', temples.findAllPublished);
+
 routes.post('/', temples.create);
 
 routes.put('/:temple_id', temples.update);
 
 routes.delete('/:temple_id', temples.delete);
+routes.delete('/', temples.deleteAll);
 
 module.exports = routes;
